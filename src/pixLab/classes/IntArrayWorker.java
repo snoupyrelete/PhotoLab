@@ -30,7 +30,7 @@ public class IntArrayWorker
   }
   /**
    * Method to return the number of a times a given int appears in the matrix
-   * @param numberToFind The specified number to find
+   * @param numberToFind The specified int to find
    * @return numbers of time the specified int is found
    */
   public int getCount(int numberToFind)
