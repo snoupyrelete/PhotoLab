@@ -68,6 +68,10 @@ public class IntArrayWorker
 	  return largestInt;
   }
  
+//  public int getColTotal()
+//  {
+//	  return 
+//  }
   
   /**
    * Method to return the total using a nested for-each loop

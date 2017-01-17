@@ -51,6 +51,16 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
+  /**
+   * Method to test keepOnlyBlue
+   */
+  public static void testKeepOnlyBlue()
+  {
+	   Picture blueMark = new Picture("blue-mark.jpg");
+	   blueMark.explore();
+	   blueMark.zeroBlue();
+	   blueMark.explore();
+  }
   
   /** Method to test the collage method */
   public static void testCollage()
@@ -76,7 +86,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     //testZeroBlue();
-    //testKeepOnlyBlue();
+    testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
@@ -98,6 +108,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	  testMirrorBottomToTop();
+	//testMirrorBottomToTop();
   }
 }

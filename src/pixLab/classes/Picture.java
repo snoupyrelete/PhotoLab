@@ -86,6 +86,8 @@ public class Picture extends SimplePicture
     
   }
   
+  ///// colors /////
+  
   /** Method to set the blue to 0 */
   public void zeroBlue()
   {
@@ -99,8 +101,27 @@ public class Picture extends SimplePicture
     }
   }
   
+  /**
+   * Method to set every value except blue to 0
+   */
+  public void keepOnlyBlue()
+  {
+	    Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	        pixelObj.setRed(0);
+	        pixelObj.setGreen(0);
+	      }
+	    }
+  }
+  
+  
+  ///// mirrors /////
+  
   /** Method that mirrors the picture around a 
-    * vertical mirror in the center of the picture
+    * vertical axis in the center of the picture
     * from left to right */
   public void mirrorVertical()
   {
@@ -119,6 +140,9 @@ public class Picture extends SimplePicture
     } 
   }
   
+  /** Method that mirrors the picture around a 
+   * vertical axis in the center of the picture
+   * from right to left */
   public void mirrorRightToLeft()
   {
 	  Pixel [][] pixels = this.getPixels2D();
@@ -138,6 +162,9 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  /** Method that mirrors the picture across a 
+   * horizontal axis in the center of the picture
+   * from bottom to top */
   public void mirrorHorizontalBottomToTop()
   {
 	  Pixel [][] pixels = this.getPixels2D();
@@ -162,7 +189,6 @@ public class Picture extends SimplePicture
 	  
   }
   
-  
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
@@ -180,12 +206,13 @@ public class Picture extends SimplePicture
       {
         
         leftPixel = pixels[row][col];      
-        rightPixel = pixels[row]                       
-                         [mirrorPoint - col + mirrorPoint];
+        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
   }
+  
+  ///// others /////
   
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
@@ -235,7 +262,6 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
-  
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
@@ -272,6 +298,7 @@ public class Picture extends SimplePicture
     beach.explore();
     beach.zeroBlue();
     beach.explore();
+    
   }
   
 } // this } is the end of class Picture, put all new methods before this
