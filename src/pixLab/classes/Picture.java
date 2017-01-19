@@ -364,11 +364,12 @@ public class Picture extends SimplePicture
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][col+1];
         rightColor = rightPixel.getColor();
-        if (leftPixel.colorDistance(rightColor) > 
-            edgeDist)
-          leftPixel.setColor(Color.BLACK);
-        else
-          leftPixel.setColor(Color.WHITE);
+        if (leftPixel.colorDistance(rightColor) > edgeDist)
+        {
+        	leftPixel.setColor(Color.BLACK);
+        } else {
+            leftPixel.setColor(Color.WHITE);
+        }
       }
     }
   }
