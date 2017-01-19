@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.text.*;
 import java.util.*;
 import java.util.List; // resolves problem with java.awt.List and java.util.List
+import java.math.*;
 
 /**
  * A class that represents a picture.  This class inherits from 
@@ -210,6 +211,90 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorSnowman()
+  {
+	  int mirrorPoint = 208;
+	    Pixel topPixel = null;
+	    Pixel botPixel = null;
+	    
+	    Pixel[][] pixels = this.getPixels2D();
+	    
+	    for (int row = 158; row < mirrorPoint; row++)
+	    {
+	      for (int col = 95; col < 295; col++)
+	      {
+	        topPixel = pixels[row][col];      
+	        botPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+	        botPixel.setColor(topPixel.getColor());
+	      }
+	    }
+  }
+  
+  public void mirrorGulls()
+  {
+	  int mirrorPoint = 350;
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    
+	    Pixel[][] pixels = this.getPixels2D();
+	    
+	    for (int row = 230; row < 330; row++)
+	    {
+	      for (int col = 230; col < mirrorPoint; col++)
+	      {
+	    		leftPixel = pixels[row][col];      
+	 	        rightPixel = pixels[row + 25][mirrorPoint - col + mirrorPoint];
+	 	        rightPixel.setColor(leftPixel.getColor());
+	      }
+	    } 
+  }
+  
+  public void mirrorDiagonal()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel topRight = null;
+	  Pixel botLeft = null;
+	  
+	  for (int row = 0; row <  pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  if (row != col && row < pixels[0].length && col < pixels.length)
+			  {
+				  topRight = pixels[row][col];
+				  botLeft = pixels[col][row];
+				  
+				  botLeft.setColor(topRight.getColor());
+			  }
+		  }
+	  }
+  }
+  
+  /** Part 2 */
+  public void mirrorDiagonalBottomRightToTopLeft()
+  {
+	  Pixel botRight = null;
+	  Pixel topLeft = null;
+	  
+	  Pixel [][] pixels = this.getPixels2D();
+	  int mirrorPoint = Math.min(pixels.length, pixels[0].length) - 1;
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  if (row + col != mirrorPoint && row < pixels[0].length && col < pixels.length)
+			  {
+				  topLeft = pixels[row][col];
+				  botRight = pixels[mirrorPoint - col][mirrorPoint - row];
+				  
+				  topLeft.setColor(botRight.getColor());
+			  }
+		  }
+	  }
+	  
   }
   
   ///// others /////

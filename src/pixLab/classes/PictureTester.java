@@ -43,6 +43,33 @@ public class PictureTester
 	  caterpillar.explore();
   }
   
+  
+  /** Method to test mirrorDiagonal */
+  public static void testMirorDiagonal()
+  {
+	  Picture koala = new Picture("koala.jpg");
+	  koala.explore();
+	  koala.mirrorDiagonal();
+	  koala.explore();
+  }
+  
+  public static void testMirorDiagonalBottomRightToTopLeft()
+  {
+	  Picture koala = new Picture("koala.jpg");
+	  koala.explore();
+	  koala.mirrorDiagonalBottomRightToTopLeft();
+	  koala.explore();
+	  koala.write("koalamirror.jpg");
+  }
+  
+  public static void testMirrorSnowman()
+  {
+	  Picture snowman = new Picture("snowman.jpg");
+	  snowman.explore();
+	  snowman.mirrorSnowman();
+	  snowman.explore();
+  }
+  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -50,6 +77,14 @@ public class PictureTester
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture gull = new Picture("seagull.jpg");
+	  gull.explore();
+	  gull.mirrorGulls();
+	  gull.explore();
   }
   /**
    * Method to test keepOnlyBlue
@@ -86,7 +121,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     //testZeroBlue();
-    testKeepOnlyBlue();
+    //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
@@ -96,7 +131,7 @@ public class PictureTester
 	//testMirrorVerticalRightToLeft();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
@@ -109,5 +144,8 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testMirrorBottomToTop();
+	//testMirorDiagonal();
+	//  testMirorDiagonalBottomRightToTopLeft();
+	  //testMirrorSnowman();
   }
 }
