@@ -347,6 +347,22 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+  public void myCollage()
+  {
+	    Picture water1 = new Picture("water.jpg");
+	    Picture caterpillar = new Picture("caterpillar.jpg");
+	    Picture waterNoBlue = new Picture(water1);
+	    waterNoBlue.zeroBlue();
+	    caterpillar.mirrorDiagonal();
+	    this.copy(water1,0,0);
+	    this.copy(caterpillar,100,0);
+	    caterpillar.mirrorVertical();
+	    this.copy(waterNoBlue,200,0);
+	    this.copy(caterpillar,300,0);
+	    this.copy(water1,400,0);
+	    this.write("collage.jpg");
+  }
+  
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
