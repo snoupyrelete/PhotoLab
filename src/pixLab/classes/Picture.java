@@ -366,18 +366,18 @@ public class Picture extends SimplePicture
   
   public void myCollage()
   {
-	    Picture water1 = new Picture("water.jpg");
-	    Picture caterpillar = new Picture("caterpillar.jpg");
-	    Picture waterNoBlue = new Picture(water1);
-	    waterNoBlue.zeroBlue();
-	    caterpillar.mirrorDiagonal();
-	    this.copy(water1,0,0);
-	    this.copy(caterpillar,100,0);
-	    caterpillar.mirrorVertical();
-	    this.copy(waterNoBlue,200,0);
-	    this.copy(caterpillar,300,0);
-	    this.copy(water1,400,0);
+	    Picture ayy = new Picture("ayylmao.jpg");
+	    Picture arch = new Picture("arch.jpg");
+	    Picture ayyRed = new Picture("ayylmao.jpg");
+	    ayyRed.fullRandomRed();
+	    
+	    ayy.zeroBlue();
+	    this.copy(ayy, 0, 0);
+	    this.copy(arch, 100, 247);
+	    this.copyPortion(ayyRed, 20, 154, 200, 320);
+	    this.mirrorVertical();
 	    this.write("collage.jpg");
+	    
   }
 
   public void fullRandomRed()

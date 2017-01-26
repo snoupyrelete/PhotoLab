@@ -192,7 +192,7 @@ public class PictureTester
 	//testMirorDiagonal();
 	//  testMirorDiagonalBottomRightToTopLeft();
 	  //testMirrorSnowman();
-    //testMyCollage();
+    testMyCollage();
     //testFiveFilters();
     //testFullRandomRed();
     //testCopyPortion();
