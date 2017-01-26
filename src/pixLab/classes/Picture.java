@@ -330,6 +330,23 @@ public class Picture extends SimplePicture
     }   
   }
 
+  public void copyPortion(Picture fromPic, int startRow, int endRow, int startCol, int endCol)
+  {
+	  	Pixel fromPixel = null;
+	    Pixel toPixel = null;
+	    Pixel[][] toPixels = this.getPixels2D();
+	    Pixel[][] fromPixels = fromPic.getPixels2D();
+	    for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length && toRow < toPixels.length && toRow < endRow; fromRow++, toRow++)
+	    {
+	      for (int fromCol = 0, toCol = startCol; fromCol < fromPixels[0].length && toCol < toPixels[0].length && toCol < endCol; fromCol++, toCol++)
+	      {
+	        fromPixel = fromPixels[fromRow][fromCol];
+	        toPixel = toPixels[toRow][toCol];
+	        toPixel.setColor(fromPixel.getColor());
+	      }
+	    }   
+  }
+  
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
@@ -361,6 +378,21 @@ public class Picture extends SimplePicture
 	    this.copy(caterpillar,300,0);
 	    this.copy(water1,400,0);
 	    this.write("collage.jpg");
+  }
+
+  public void fullRandomRed()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for (Pixel [] row : currentPicture)
+	  {
+		  for (Pixel currentPixel : row)
+		  {
+			  int red = (int) (Math.random() * 256);
+
+			  
+			 currentPixel.setColor(new Color(red, currentPixel.getGreen(), currentPixel.getBlue()));
+		  }
+	  }
   }
   
   /** Method to show large changes in color 

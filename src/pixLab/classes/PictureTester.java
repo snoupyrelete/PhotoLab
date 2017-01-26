@@ -127,6 +127,36 @@ public class PictureTester
 	  swan.explore();
   }
   
+  public static void testFullRandomRed()
+  {
+	  Picture ayy = new Picture("ayylmao.jpg");
+	  ayy.explore();
+	  ayy.fullRandomRed();
+	  ayy.explore();
+  }
+  
+  public static void testFiveFilters()
+  {
+	  Picture ayy = new Picture("ayylmao.jpg");
+	  ayy.zeroBlue();
+	  ayy.mirrorRightToLeft();
+	  ayy.mirrorVertical();
+	  ayy.addMessage("Ayyy lmao", 100, 100);
+	  ayy.copy(new Picture("caterpillar.jpg"), 200, 200);
+	  ayy.write("ayylmaofivefilters.jpg");
+	  ayy.explore();
+	  
+  }
+  
+  public static void testCopyPortion()
+  {
+	  Picture wall = new Picture("wall.jpg");
+	  Picture fromPic = new Picture("ayylmao.jpg");
+	  wall.explore();
+	  wall.copyPortion(fromPic, 20, 154, 20, 320);
+	  wall.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -162,6 +192,9 @@ public class PictureTester
 	//testMirorDiagonal();
 	//  testMirorDiagonalBottomRightToTopLeft();
 	  //testMirrorSnowman();
-    testMyCollage();
+    //testMyCollage();
+    //testFiveFilters();
+    //testFullRandomRed();
+    //testCopyPortion();
   }
 }
