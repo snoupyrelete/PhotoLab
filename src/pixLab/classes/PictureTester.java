@@ -160,7 +160,7 @@ public class PictureTester
   
   public static void testGlitch()
   {
-	  Picture birds = new Picture("croppedbirdfinal.png");
+	  Picture birds = new Picture("croppedbirdfinal.jpg");
 	  birds.glitchAyy();
 	  birds.explore();
   }
@@ -182,7 +182,7 @@ public class PictureTester
 	//testMirrorVerticalRightToLeft();
     //testMirrorTemple();
     //testMirrorArms();
-   // testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
@@ -197,8 +197,8 @@ public class PictureTester
     //testGetAverageForColumn(0);
 	//testMirrorBottomToTop();
 	//testMirorDiagonal();
-	//  testMirorDiagonalBottomRightToTopLeft();
-	  //testMirrorSnowman();
+	//testMirorDiagonalBottomRightToTopLeft();
+	//testMirrorSnowman();
     //testMyCollage();
     //testFiveFilters();
     //testFullRandomRed();
