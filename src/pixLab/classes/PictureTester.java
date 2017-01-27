@@ -139,10 +139,11 @@ public class PictureTester
   {
 	  Picture ayy = new Picture("ayylmao.jpg");
 	  ayy.zeroBlue();
+
 	  ayy.mirrorRightToLeft();
+	  ayy.copyPortion(new Picture("caterpillar.jpg"), 50, 80, 50, 100);
 	  ayy.mirrorVertical();
 	  ayy.addMessage("Ayyy lmao", 100, 100);
-	  ayy.copy(new Picture("caterpillar.jpg"), 200, 200);
 	  ayy.write("ayylmaofivefilters.jpg");
 	  ayy.explore();
 	  
@@ -157,6 +158,12 @@ public class PictureTester
 	  wall.explore();
   }
   
+  public static void testGlitch()
+  {
+	  Picture birds = new Picture("croppedbirdfinal.png");
+	  birds.glitchAyy();
+	  birds.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -192,9 +199,10 @@ public class PictureTester
 	//testMirorDiagonal();
 	//  testMirorDiagonalBottomRightToTopLeft();
 	  //testMirrorSnowman();
-    testMyCollage();
+    //testMyCollage();
     //testFiveFilters();
     //testFullRandomRed();
     //testCopyPortion();
+	  testGlitch();
   }
 }

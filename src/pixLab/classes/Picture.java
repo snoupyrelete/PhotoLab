@@ -395,6 +395,12 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void glitchAyy()
+  {
+	  Picture eye = new Picture("sqeye.png");
+//	  this.copyPortion(eye, 100, 130, 370, 470);
+//	  this.copyPortion(eye, 120, 150, 325, 425);
+  }
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
