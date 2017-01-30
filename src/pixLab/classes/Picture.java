@@ -369,7 +369,7 @@ public class Picture extends SimplePicture
 	    Picture ayy = new Picture("ayylmao.jpg");
 	    Picture arch = new Picture("arch.jpg");
 	    Picture ayyRed = new Picture("ayylmao.jpg");
-	    ayyRed.fullRandomRed();
+	    //ayyRed.fullRandomRed(Color.RED);
 	    
 	    ayy.zeroBlue();
 	    this.copy(ayy, 0, 0);
@@ -380,17 +380,38 @@ public class Picture extends SimplePicture
 	    
   }
 
-  public void fullRandomRed()
+  
+  /**
+   * Change some percentage of an images pixels to a diff color, with Math.random and a specified color to change
+   * could use to have say the yellow bird all pixelated with rainbow pixels. 
+   * 
+   * TODO : Need to add param with color to change from and color to 
+   * change to
+   */
+  public void fullRandomColor(Color colorToChange, Color colorToChangeTo)
   {
 	  Pixel [][] currentPicture = this.getPixels2D();
 	  for (Pixel [] row : currentPicture)
 	  {
 		  for (Pixel currentPixel : row)
 		  {
-			  int red = (int) (Math.random() * 256);
-
 			  
-			 currentPixel.setColor(new Color(red, currentPixel.getGreen(), currentPixel.getBlue()));
+			// if (currentPixel.getcolor == specified color passed by param)
+//			  if (currentPixel.getBlue() == colorToChange.getBlue()
+//					  && currentPixel.getRed() == colorToChange.getRed() 
+//					  && currentPixel.getGreen() == colorToChange.getGreen())
+			  if (currentPixel.colorDistance(colorToChange) > 50)
+			  {
+//					int red = (int) (Math.random() * 256);  
+//					int green = (int) (Math.random() * 256);  
+//					int blue = (int) (Math.random() * 256);  
+					
+				  int red = colorToChangeTo.getRed();
+				  int green = colorToChangeTo.getGreen();
+				  int blue = colorToChangeTo.getBlue();
+				  
+				  currentPixel.setColor(new Color(red, green, blue)); 
+			  }
 		  }
 	  }
   }
@@ -398,9 +419,13 @@ public class Picture extends SimplePicture
   public void glitchAyy()
   {
 	  Picture eye = new Picture("sqeye.png");
-//	  this.copyPortion(eye, 100, 130, 370, 470);
-//	  this.copyPortion(eye, 120, 150, 325, 425);
+	  this.copyPortion(eye, 100, 130, 370, 470);
+	  this.copyPortion(eye, 120, 150, 325, 425);
+	  this.fullRandomColor(new Color(255,211,1), new Color(1,41,190));
+	  
+	  
   }
+  
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */

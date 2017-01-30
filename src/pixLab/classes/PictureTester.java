@@ -1,4 +1,7 @@
 package pixLab.classes;
+
+import java.awt.Color;
+
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -131,7 +134,7 @@ public class PictureTester
   {
 	  Picture ayy = new Picture("ayylmao.jpg");
 	  ayy.explore();
-	  ayy.fullRandomRed();
+	  //ayy.fullRandomRed(Color.RED);
 	  ayy.explore();
   }
   
@@ -160,7 +163,7 @@ public class PictureTester
   
   public static void testGlitch()
   {
-	  Picture birds = new Picture("croppedbirdfinal.jpg");
+	  Picture birds = new Picture("drippybirds.png");
 	  birds.glitchAyy();
 	  birds.explore();
   }
