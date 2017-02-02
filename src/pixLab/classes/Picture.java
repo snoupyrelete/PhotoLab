@@ -428,9 +428,31 @@ public class Picture extends SimplePicture
 	 
 	  cody.addMessage("Yasssss", 15, 80);
 	  this.copyPortion(cody, 200, 400, 500, 585);
+	  this.orangeBirdToGray();
 	  
 	  
-	  
+  }
+  
+  // Method to set orange bird to grayscale. Loop over all pixels, then test that the pixel is orange
+  // with like: r > 175 && r < 260 && g > 0 && g < 100 && b >= 0 and b < 10; then set the color to a 
+  // shifted gray color
+  
+  public void orangeBirdToGray()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	    	int red = pixelObj.getRed();
+	    	int green = pixelObj.getRed();
+	    	int blue = pixelObj.getBlue();
+	        if (red > 175 && red < 260 && green > 0 && green < 100 && blue >= 0 && blue < 10)
+	        {
+	        	pixelObj.setColor(Color.GRAY);
+	        }
+	      }
+	    }
   }
   
   /** Method to show large changes in color 
