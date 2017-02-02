@@ -400,7 +400,7 @@ public class Picture extends SimplePicture
 //			  if (currentPixel.getBlue() == colorToChange.getBlue()
 //					  && currentPixel.getRed() == colorToChange.getRed() 
 //					  && currentPixel.getGreen() == colorToChange.getGreen())
-			  if (currentPixel.colorDistance(colorToChange) > 50)
+			  if (currentPixel.colorDistance(colorToChange) > 60 && currentPixel.colorDistance(colorToChange) < 70)
 			  {
 //					int red = (int) (Math.random() * 256);  
 //					int green = (int) (Math.random() * 256);  
@@ -419,9 +419,15 @@ public class Picture extends SimplePicture
   public void glitchAyy()
   {
 	  Picture eye = new Picture("sqeye.png");
+	  Picture cody = new Picture("cody.png");
 	  this.copyPortion(eye, 100, 130, 370, 470);
 	  this.copyPortion(eye, 120, 150, 325, 425);
-	  this.fullRandomColor(new Color(255,211,1), new Color(1,41,190));
+	  //this.fullRandomColor(new Color(255,211,1), new Color(195,48,148));
+
+	  //cody.getBufferedImage().createGraphics().drawRoundRect(0, 0, 10, 10, 5, 5);
+	  cody.addMessage("Yasssss", 30, 30);
+	  this.copyPortion(cody, 200, 400, 500, 585);
+	  
 	  
 	  
   }
