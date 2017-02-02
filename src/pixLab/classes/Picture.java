@@ -425,7 +425,8 @@ public class Picture extends SimplePicture
 	  //this.fullRandomColor(new Color(255,211,1), new Color(195,48,148));
 
 	  //cody.getBufferedImage().createGraphics().drawRoundRect(0, 0, 10, 10, 5, 5);
-	  cody.addMessage("Yasssss", 30, 30);
+	 
+	  cody.addMessage("Yasssss", 15, 80);
 	  this.copyPortion(cody, 200, 400, 500, 585);
 	  
 	  
