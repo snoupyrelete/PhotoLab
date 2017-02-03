@@ -428,16 +428,40 @@ public class Picture extends SimplePicture
 	 
 	  cody.addMessage("Yasssss", 15, 80);
 	  this.copyPortion(cody, 200, 400, 500, 585);
-	  this.orangeBirdToGray();
+	  
+	
+	  this.blackToWhitePixelated();
 	  
 	  
   }
+  
+  /**
+   * Method to shift pixels either up/down a row or left/right a collumn.
+   * Params: startRow, endRow, startCol, endCol, shiftRow, shiftCol, noiseAmount int
+   */
+  public void pixelShift()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; row++)
+		  {
+			 // pixels[row][col].setColor();
+		  }
+	  }
+	// pixels[row + shiftRow][col + shiftCol]  
+  }
+  
+  
+  
   
   // Method to set orange bird to grayscale. Loop over all pixels, then test that the pixel is orange
   // with like: r > 175 && r < 260 && g > 0 && g < 100 && b >= 0 and b < 10; then set the color to a 
   // shifted gray color
   
-  public void orangeBirdToGray()
+  
+  // change all black to white? thatd be cool too
+  public void blackToWhitePixelated()
   {
 	  Pixel[][] pixels = this.getPixels2D();
 	    for (Pixel[] rowArray : pixels)
@@ -445,11 +469,15 @@ public class Picture extends SimplePicture
 	      for (Pixel pixelObj : rowArray)
 	      {
 	    	int red = pixelObj.getRed();
-	    	int green = pixelObj.getRed();
+	    	int green = pixelObj.getGreen();
 	    	int blue = pixelObj.getBlue();
-	        if (red > 175 && red < 260 && green > 0 && green < 100 && blue >= 0 && blue < 10)
+
+	 
+	    	if (red < 5 && green < 5 && blue < 5 )
+	        	
 	        {
-	        	pixelObj.setColor(Color.GRAY);
+	        	pixelObj.setColor(Color.WHITE);
+	        	
 	        }
 	      }
 	    }
