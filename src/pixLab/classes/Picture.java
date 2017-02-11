@@ -432,6 +432,9 @@ public class Picture extends SimplePicture
 	
 	  this.blackToWhitePixelated();
 	  
+	  this.randomSmear();
+	  this.write("glitchArt_trippyDrippy");
+	  
 	  
   }
   
@@ -444,7 +447,7 @@ public class Picture extends SimplePicture
 	  Pixel[][] pixels = this.getPixels2D();
 	  for (int row = 0; row < pixels.length; row++)
 	  {
-		  for (int col = 0; col < pixels[0].length; row++)
+		  for (int col = 0; col < pixels[0].length; col++)
 		  {
 			 // pixels[row][col].setColor();
 		  }
@@ -508,6 +511,28 @@ public class Picture extends SimplePicture
         }
       }
     }
+  }
+  
+  public void randomSmear()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length -1; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length -1; col++)
+		  {
+			  double random = Math.random();
+			  // About a 10% chance of having a given pixel be "smeared", can be adjusted.
+			  if (random < .02)
+			  {
+				  pixels[row][col].setColor(Color.MAGENTA);
+			  }
+			  else if (random > .98)
+			  {
+				  pixels[row][col].setColor(Color.WHITE);
+			  }  
+		  }
+	  }
   }
   
   public void betterEdgeDetection(int edgeDist) 
