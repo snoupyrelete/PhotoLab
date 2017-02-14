@@ -523,7 +523,7 @@ public class SimplePicture implements DigitalPicture
    graphics2d.setPaint(Color.white);
    
    // set the font to Helvetica bold style and size 16
-   graphics2d.setFont(new Font("Helvetica",Font.BOLD,16));
+   graphics2d.setFont(new Font("Monotype Corsiva",Font.BOLD,24));
    
    // draw the message
    graphics2d.drawString(message,xPos,yPos);

@@ -565,6 +565,29 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void valentinesMeme()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length - 1; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length - 1; col++)
+		  {
+			  if (pixels[row][col].getRed() > 240 && pixels[row][col].getGreen() > 240)
+			  {
+				  pixels[row][col].setColor(Color.RED);
+			  }
+		  }
+	  }
+	  this.addMessage("I", 65, 71);
+	  this.addMessage("S", 90, 116);
+	  this.addMessage("JAVA", 140, 50);
+	  this.addMessage("if (<3 > 3) { print(\"iluvu\")}", 30, 25);
+	  this.write("valentinesMemeHearts.jpg");
+	  
+	  
+  }
+  
   
   /* Main method for testing - each class in Java can have a main 
    * method 

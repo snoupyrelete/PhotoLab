@@ -167,6 +167,15 @@ public class PictureTester
 	  birds.glitchAyy();
 	  birds.explore();
   }
+  
+  public static void testValentinesMeme()
+  {
+	  Picture candy = new Picture("candyhearts.jpg");
+	  candy.explore();
+	  candy.valentinesMeme();
+	  candy.explore();
+	  
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -207,5 +216,6 @@ public class PictureTester
     //testFullRandomRed();
     //testCopyPortion();
 	  testGlitch();
+	  //testValentinesMeme();
   }
 }
