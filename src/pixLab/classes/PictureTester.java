@@ -176,6 +176,17 @@ public class PictureTester
 	  candy.explore();
 	  
   }
+  
+  public static void testSteganography()
+  {
+  	Picture source = new Picture("baseimage.png");
+  	Picture hidden = new Picture("hidden.png");
+  	source.encode(hidden);
+  	source.explore();
+  	hidden.explore();
+  	source.decode();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -217,5 +228,6 @@ public class PictureTester
     //testCopyPortion();
 	  testGlitch();
 	  //testValentinesMeme();
+	 testSteganography();
   }
 }
